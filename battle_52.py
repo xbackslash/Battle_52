@@ -342,7 +342,7 @@ def game_loop():
                 for card_index, card in enumerate(player_hand):
                     if card.x <= mouse_x <= card.x + card.width and card.y <= mouse_y <= card.y + card.height:
                         selected_card = player_hand.pop(card_index)
-                        selected_card.draw(490, 230)
+                        selected_card.draw(490, 275)
                         player_discard_pile.append(selected_card)
                         new_card = player_deck.draw()
                         if new_card:
@@ -352,7 +352,7 @@ def game_loop():
                         for _ in range(opponent_discard_count):
                             opponent_card = opponent_deck.draw()
                             if opponent_card:
-                                opponent_card.draw(50, 230)
+                                opponent_card.draw(50, 275)
                                 opponent_discard_pile.append(opponent_card)
                         if play_message == "" or message_timer == 0:
                             play_message = f"You played {selected_card.name} of {selected_card.suit}"
@@ -371,13 +371,13 @@ def game_loop():
                 selected_card_index = opponent_hand.index(selected_card)
                 selected_card = opponent_hand.pop(selected_card_index)
 
-                selected_card.draw(50, 230)
+                selected_card.draw(50, 275)
                 opponent_discard_pile.append(selected_card)
                 opponent_discard_count = selected_card.value
                 for _ in range(opponent_discard_count):
                     player_card = player_deck.draw()
                     if player_card:
-                        player_card.draw(490, 230)
+                        player_card.draw(490, 275)
                         player_discard_pile.append(player_card)
                 new_ai_card = opponent_deck.draw()
                 if new_ai_card:
@@ -402,7 +402,7 @@ def game_loop():
             opponent_x += card.width + 10
 
         player_discard_x = 485
-        player_discard_y = 225
+        player_discard_y = 270
         pygame.draw.rect(screen, GREY, (player_discard_x, player_discard_y, Card("A", "H", 1, False).width + 10, Card("A", "H", 1, False).height + 10))
         font = pygame.font.Font(None, 24)
         discard_text = font.render("Discard", True, BLACK)
@@ -410,7 +410,7 @@ def game_loop():
         screen.blit(discard_text, discard_rect)
 
         opponent_discard_x = 45
-        opponent_discard_y = 225
+        opponent_discard_y = 270
         pygame.draw.rect(screen, GREY, (opponent_discard_x, opponent_discard_y, Card("A", "H", 1, False).width + 10, Card("A", "H", 1, False).height + 10))
         discard_text = font.render("AI Discard", True, BLACK)
         discard_rect = discard_text.get_rect(center=(opponent_discard_x + (Card("A", "H", 1, False).width + 10) // 2, opponent_discard_y + (Card("A", "H", 1, False).height + 10) // 2))
