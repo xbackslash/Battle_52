@@ -9,7 +9,7 @@ pygame.init()
 pygame.mixer.init()
 
 # Load the background music
-background_music = pygame.mixer.Sound("Battle_52.wav")
+background_music = pygame.mixer.Sound("Battle_52.mp3")
 
 # Set the volume (0.0 to 1.0, adjust as needed)
 background_music.set_volume(0.25)
