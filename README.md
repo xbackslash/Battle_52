@@ -3,7 +3,7 @@ A card game where you and the AI battle with 52 card decks of playing cards.
 
 This is a barebones game made completely in pygame with the help of ChatGPT-3.5.
 
-I did a lot of the setup and plannning, ran the code throught ChatGPT for changes and fixes.
+I did a lot of the setup and planning, ran the code throught ChatGPT for changes and fixes.
 It's still in the works but in its current state it is playable.
 
 ![battle_52_main_menu](https://github.com/xbackslash/Battle_52/assets/81842238/4fceb5be-c0f6-4860-8786-0e268ba06038)
