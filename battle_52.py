@@ -5,6 +5,18 @@ import random
 # Initialize Pygame
 pygame.init()
 
+# Initialize Pygame Mixer
+pygame.mixer.init()
+
+# Load the background music
+background_music = pygame.mixer.Sound("Battle_52.wav")
+
+# Set the volume (0.0 to 1.0, adjust as needed)
+background_music.set_volume(0.25)
+
+# Play the background music on a loop
+background_music.play(-1)
+
 # Constants for the window size
 WIDTH = 1280
 HEIGHT = 720
@@ -196,7 +208,7 @@ def credits_screen():
         "Credits:",
         "- Programming: xbackslash",
         "- Artwork: xbackslash",
-        "- Music: (none yet)",
+        "- Music: 'Battle_52' by xbackslash",
         "",  # Add an empty line for spacing
         "Special Thanks:",
         "- OpenAI for ChatGPT",
