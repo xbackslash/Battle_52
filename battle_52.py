@@ -429,11 +429,11 @@ def game_loop():
         screen.blit(discard_text, discard_rect)
 
         font = pygame.font.Font(None, 30)
-        player_hp_text = font.render(f"Player HP: {len(player_deck.cards)}", True, WHITE)
+        player_hp_text = font.render(f"Your Deck: {len(player_deck.cards)}", True, WHITE)
         player_hp_rect = player_hp_text.get_rect(midleft=(WIDTH - hp_padding - hp_offset, HEIGHT - padding - Card("A", "H", 1, False).height / 2))
         screen.blit(player_hp_text, player_hp_rect)
 
-        opponent_hp_text = font.render(f"AI HP: {len(opponent_deck.cards)}", True, WHITE)
+        opponent_hp_text = font.render(f"AI Deck: {len(opponent_deck.cards)}", True, WHITE)
         opponent_hp_rect = opponent_hp_text.get_rect(midleft=(WIDTH - hp_padding - hp_offset, padding + Card("A", "H", 1, False).height / 2))
         screen.blit(opponent_hp_text, opponent_hp_rect)
 
