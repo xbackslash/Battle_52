@@ -10,9 +10,11 @@ pygame.mixer.init()
 
 # Load the background music
 background_music = pygame.mixer.Sound("Battle_52.mp3")
+win_sound = pygame.mixer.Sound('Battle_52_Win.mp3')
 
 # Set the volume (0.0 to 1.0, adjust as needed)
 background_music.set_volume(0.25)
+win_sound.set_volume(0.5)
 
 # Play the background music on a loop
 background_music.play(-1)
@@ -455,6 +457,7 @@ def game_loop():
             return "GameOver"
         elif len(opponent_deck.cards) == 0:
             display_game_over_message("You")
+            win_sound.play()
             pygame.display.flip()
             pygame.time.wait(3000)
             return "GameOver"
